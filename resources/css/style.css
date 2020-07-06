@@ -1,1 +1,329 @@
-Hello
+/* bug-summary
+Desktop version:--------------------------
+1.lion icon cannot stay at same level with COMAR ACADEY
+2.title "start learning" and "thesis exhibit" annot stay as block
+3.have not do color styling yet, eg., hover grey, font and color
+---mobile version---------------
+1. lion icon is too high and the header is not showing up as a block
+*/
+/* common properties */
+body{
+    background-color: white;
+    font-family: Helvetica, sans-serif;
+    padding:0;
+    margin:0;
+
+}
+p,h1,h3{
+    text-align: left;
+    margin: 0 0 0 0;
+}
+
+.header,.banner,.information,.courses{
+    box-sizing:border-box;
+}
+.mobile{
+    display: none;
+}
+
+
+.block-title{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    display: block;
+}
+
+.black{
+    color: black;
+}
+.grey{
+    color: grey;
+}
+
+.vertical-bar{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info-box{
+    display: flex;
+    align-items: center;
+    padding: 16px;
+
+}
+
+.info-box img{
+    /* display: inline-block; */
+    width: 35%;
+    /* width: auto; */
+    height: auto;
+
+
+}
+.info-des{
+    width: 65%;
+    padding: 16px;
+}
+.info-des p{
+    padding-top: 8px;
+}
+/* .read-more p{
+    padding: 0;
+} */
+
+
+
+/* header */
+.header{
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+    
+
+}
+.logo{
+    
+    height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 24px;
+    /*bug: logo is not at the same line */
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul{
+    list-style-type: none;
+
+}
+li{
+    display: inline-flex;
+    padding-left: 16px;
+
+}
+
+
+/* banner */
+.banner{
+    background-color: grey;
+    display: flex;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 32px 24px;
+}
+
+.banner img{
+    width: 60%;
+    height: auto;
+    padding-right: 24px;
+}
+
+.start{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.banner h1{
+    padding-top:32px;
+}
+.banner p{
+    padding-top:32px;
+}
+
+button{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* information */
+.information{
+    padding: 32px 0 32px 24px;
+    display: flex;
+    width: 100%;
+    
+}
+
+.info-main{
+    padding-right: 24px;
+    width: 60%;
+}
+.info-main img{
+    width: 100%;
+    height: auto;
+
+}
+.information h2{
+    padding-top: 32px;
+    padding-bottom: 24px;
+    margin: 0;
+
+}
+
+/* courses section */
+.courses{
+    display: flex;
+    padding: 32px 72px 32px 40px;
+    background-color: grey;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.course-row{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    padding-top: 32px;
+}
+
+
+.course-box{
+    width: 33.3%;
+    height: auto;
+    margin-left: 32px;
+    background-color: white;
+}
+.course-box img{
+    width: 100%;
+    height: auto;
+}
+
+.course-box .info-des{
+    padding: 16px 16px 24px 16px;
+}
+
+/* Thesis exhibit */
+.thesis{
+    padding: 32px 0 32px 24px;
+    display: flex;
+}
+        /* I used .info-main for video container */
+.info-main video{
+    width: 100%;
+    height: auto;
+
+}
+
+.info-main h3{
+    padding-top: 24px;
+
+}
+.info-main p{
+    padding-top: 8px;
+}
+.thesis h4{
+    text-align:center;
+}
+/* bug:the h4 title just don't center */
+
+/* footer */
+.footer{
+    border-top: 1px solid grey;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* mobile version */
+@media only screen and (max-width: 700px){
+    /* remember to replace to 480 */
+    /* common */
+    .vertical-bar{
+        width:100%;
+    }
+    .desktop{
+        display: none;
+    }
+
+    /* header */
+    /* .header span, ul{
+        display: none;
+    } */
+    .mobile{
+        display:inline-block;
+    }
+    /* the other 3 icons are moving in different way  */
+
+    /* banner */
+    .banner{
+        flex-wrap: wrap;
+        padding: 0 0 32px 0;
+    }
+    .banner img{
+        width: 100%;
+    }
+    .banner .start{
+        padding: 0 16px 0 16px;
+    }
+
+    /* information section */
+    .information{
+        padding:16px 16px 32px 16px;
+        width:100%;
+    }
+    
+    .info-box{
+        padding:0;
+        flex-wrap:wrap;
+        width:100%;
+    }
+
+    .info-box img{
+        width:100%;
+        /* display: block; */
+    }
+  
+    .imformation .mobile{
+        display:inline-block;
+    }
+    .info-des{
+        padding: 16px 16px 64px 16px;
+    }
+    .vertical-bar .last-child{
+        padding-bottom: 0;
+    }
+
+    /* courses */
+    .courses{
+        background-color: white;
+        padding: 32px 16px;
+    }
+    .m-course{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .m-course-box{
+        background-color: grey;
+        font-size: 16px;
+        padding: 16px 16px 24px 16px;
+        margin-bottom: 8px;
+        width:100%;
+    }
+    .m-course .last-child{
+        margin-bottom: 0;
+    }
+    /* Thesis */
+    .thesis{
+        padding:32px 0 24px 0;
+        flex-wrap:nowrap;
+
+    }
+    .thesis video{
+        width:100%;
+    }
+
+    /* footer */
+    .footer{
+        padding:16px;
+    }
+}
